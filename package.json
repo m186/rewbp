@@ -1,0 +1,23 @@
+{
+  "name": "rewbp",
+  "version": "1.0.0",
+  "description": "#### 介绍",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m186/rewbp.git"
+  },
+  "author": "AceChen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m186/rewbp/issues"
+  },
+  "homepage": "https://github.com/m186/rewbp#readme",
+  "dependencies": {
+    "react": "^16.8.2",
+    "webpack": "^4.29.5"
+  }
+}
