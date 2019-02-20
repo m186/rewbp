@@ -21,7 +21,6 @@ app.get('*', (req, res) => {
  * koa 使用
  */
 // const app = new Koa()
-// app.use(koaStatic(path.join(__dirname, '../dist/'), {dir: '/public'}))
 // app.use(async (ctx, next) => {
 // 	const htmlString = ReactSSR.renderToString(serverEntry)
 // 	ctx.body = template.replace('<app></app>', htmlString)

@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
+const isDev = process.env.NODE_ENV === 'development'
 
-module.exports = {
+const config = {
 	mode: 'none',
 	entry: {
 		app: path.join(__dirname, '../client/app.js')
@@ -30,3 +31,12 @@ module.exports = {
 		})
 	]
 }
+
+if (isDev) {
+	config.devServer = {
+		port: '3333',
+		host: '0.0.0.0'
+	}
+}
+
+module.exports = config
