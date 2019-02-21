@@ -35,7 +35,17 @@ const config = {
 if (isDev) {
 	config.devServer = {
 		port: '3333',
-		host: '0.0.0.0'
+		host: '0.0.0.0',
+		contentBase: path.join(__dirname, '../dist'),
+		hot: true,
+		overlay: {
+			errors: true
+		},
+		// 配置虚拟文件名挂载
+		publicPath: '/public',
+		historyApiFallback: {
+			index: '/public/index.html'
+		}
 	}
 }
 

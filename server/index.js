@@ -14,7 +14,7 @@ const app = express()
 app.use('/public', express.static(path.join(__dirname, '../dist')))
 app.get('*', (req, res) => {
 	const htmlString = ReactSSR.renderToString(serverEntry)
-	res.send(template.replace('<app></app>', htmlString))
+	res.send(template.replace('<!-- app -->', htmlString))
 })
 	
 /**
