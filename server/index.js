@@ -6,7 +6,7 @@ const ReactSSR = require('react-dom/server')
 const app = express()
 const isDev = process.env.NODE_ENV === 'development'
 
-if (!isDev) {
+// if (!isDev) {
   const serverEntry = require('../dist/serverEntry').default
   const template = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8')
   app.use('/public', express.static(path.join(__dirname, '../dist')))
@@ -14,10 +14,11 @@ if (!isDev) {
     const htmlString = ReactSSR.renderToString(serverEntry)
     res.send(template.replace('<!-- app -->', htmlString))
   })
-} else {
-  const devStatic = require('./util/dev-static')
-  devStatic(app)
-}
+// } 
+// else {
+//   const devStatic = require('./util/dev-static')
+//   devStatic(app)
+// }
 
 app.listen(4000, () => {
   console.log('服务端口：http://localhost:4000')

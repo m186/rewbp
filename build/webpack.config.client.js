@@ -13,6 +13,9 @@ const config = {
     path: path.join(__dirname, '../dist/'),
     publicPath: '/public/'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
@@ -50,9 +53,7 @@ if (isDev) {
       index: '/public/index.html'
     }
   },
-  config
-    .plugins
-    .push(new webpack.HotModuleReplacementPlugin())
+  config.plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
 module.exports = config
