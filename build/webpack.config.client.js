@@ -29,9 +29,11 @@ const config = {
       }
     ]
   },
-  plugins: [new HtmlPlugin({
+  plugins: [new HtmlPlugin(
+    {
       template: path.join(__dirname, '../client/template.html')
-    })]
+    }
+  )]
 }
 
 if (isDev) {
@@ -49,7 +51,7 @@ if (isDev) {
       errors: true
     },
     publicPath: '/public', // 配置虚拟文件名挂载
-    historyApiFallback: { // 如果加载不正确，则返回这个历史页
+    historyApiFallback: { // 如果加载不正确，则返回这个页面
       index: '/public/index.html'
     }
   },
