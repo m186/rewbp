@@ -11,9 +11,7 @@ class State {
 	}
 }
 
-
-const appState = new State()
-
+export const appState = new State()
 autorun(() => { // 如果数据有更新则自执行
 	console.log(appState.msg)
 })
