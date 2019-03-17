@@ -1,9 +1,21 @@
 const express = require('express')
 const fs = require('fs')
+const bodyParser = require('body-parser')
+const session = require('express-session')
 const path = require('path')
 const ReactSSR = require('react-dom/server')
 
 const app = express()
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(session({
+  maxAge: 10 * 60 * 1000,
+  name: 'loginFlag',
+  resave: false,
+  saveUninitialized: false,
+  secret: '345%^#@ysldkfl090833'
+}))
+
 const isDev = process.env.NODE_ENV === 'development'
 
 // if (!isDev) {
